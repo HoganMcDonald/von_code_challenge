@@ -5,6 +5,7 @@ Styles for Von 91 Coding Challenge
 /* ------------  base styles  ------------ */
 body, html {
   margin: 0;
+  overflow-x: hidden;
 }
 
 body {
@@ -99,8 +100,6 @@ nav a {
 /* ------------  header  ------------ */
 .header--background-container {
   height: 100vh;
-  background-image: url('./images/clothing.png');
-  background-size: cover;
   position: relative;
 }
 
@@ -108,9 +107,27 @@ nav a {
   height: 100%;
   width: 100%;
 
-  background-image: url('./images/clothing.png');
+  position: absolute;
+  top: 0;
+
   background-size: cover;
   background-position: center;
+
+  transition: opacity 500ms;
+}
+
+.header--background-container .image1 {
+  background-image: url('./images/clothing.png');
+}
+
+.header--background-container .image2 {
+  background-image: url('./images/desktop.jpg');
+  opacity: 0;
+}
+
+.header--background-container .image3 {
+  background-image: url('./images/von_office.jpg');
+  opacity: 0;
 }
 
 .header--background-overlay {
@@ -148,6 +165,8 @@ nav a {
   position: absolute;
   top: 50vh;
   transform: translateY(-50%);
+
+  cursor: pointer;
 }
 
 .header--content-wrapper .prev-arrow {

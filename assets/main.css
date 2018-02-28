@@ -19,6 +19,7 @@ body {
 html {
   font-size: 22px;
   font-family: "merriweather", sans-serif;
+  color: #383838;
 }
 
 h1 {
@@ -32,7 +33,67 @@ footer p {
   font-family: "lato", sans-serif;
   font-size: 12px;
 }
+
+nav a {
+  font-size: 20px;
+  font-family: "montserrat",sans-serif;
+  font-style: normal;
+  font-weight: 700;
+}
 /* ------------  /end typography  ------------ */
+
+
+/* ------------  navbar  ------------ */
+.navbar {
+  height: 64px;
+  width: 100%;
+
+  position: absolute;
+  top: 43px;
+
+  z-index: 999;
+}
+
+.navbar--logo {
+  height: 100%;
+  margin-left: 60px;
+
+  float: left;
+}
+
+.navbar--nav-links {
+  height: 100%;
+  padding: 0;
+  margin: 0px 60px 0px 0px;
+
+  list-style: none;
+
+  display: flex;
+  align-items: center;
+
+  float: right;
+}
+
+.navbar--nav-links li {
+  margin-left: 50px;
+
+  display: inline;
+}
+
+.navbar--nav-links a {
+  text-decoration: none;
+  color: white;
+
+  text-transform: uppercase;
+
+  transition: color 250ms;
+}
+
+.navbar--nav-links a:hover {
+  color: #a3a3a3;
+
+}
+/* ------------  /end navbar  ------------ */
 
 
 /* ------------  header  ------------ */
@@ -86,6 +147,7 @@ footer p {
 
   position: absolute;
   top: 50vh;
+  transform: translateY(-50%);
 }
 
 .header--content-wrapper .prev-arrow {
@@ -94,9 +156,33 @@ footer p {
 
 .header--content-wrapper .next-arrow {
   right: 50px;
-  transform: rotate(180deg);
+  transform: translateY(-50%) rotate(180deg);
 }
-/* ------------  /header  ------------ */
+/* ------------  /end header  ------------ */
+
+/* ------------  main  ------------ */
+main {
+  padding: 73px 0px 150px 0px;
+}
+
+article {
+  max-width: 768px;
+  margin: auto;
+}
+
+article p {
+  margin-top: 2rem;
+  line-height: 2;
+}
+
+article img {
+  width: 365px;
+  margin: 20px;
+
+  display: inline-block;
+  float: right;
+}
+/* ------------  /end main  ------------ */
 
 
 /* ------------  footer  ------------ */
@@ -163,14 +249,67 @@ footer {
 /* ------------  /end footer  ------------ */
 
 
-/* ------------  tablet styles  ------------ */
+/* ------------  mobile styles  ------------ */
 @media only screen
-  and (min-device-width: 768px)
-  and (max-device-width: 1024px)
-  and (-webkit-min-device-pixel-ratio: 2) {
+  and (max-width: 768px) {
+
+    .navbar {
+      top: 20px;
+    }
+
+    .navbar--logo {
+      margin-left: 20px;
+    }
+
+    .navbar--nav-links {
+      margin-right: 20px;
+    }
+
+    .header--content-wrapper .arrow {
+      height: 33px;
+
+      top: auto;
+      bottom: 30px;
+    }
+
+    main article {
+      width: 90%;
+    }
+
+    article img {
+      display: block;
+      margin: auto;
+      width: 90%;
+      float: none;
+    }
+
+    footer {
+      height: 240px;
+    }
+
+    .footer--grid {
+      grid-template-columns: 90vw;
+      grid-row-gap: 22px;
+    }
+
+    .footer--section {
+      width: 100%;
+    }
+
+    .footer--section .content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .footer--section .social-list {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
 }
-/* ------------  /end tablet styles  ------------*/
+/* ------------  /end mobile styles  ------------*/
 
 
 

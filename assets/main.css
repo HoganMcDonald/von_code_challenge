@@ -5,7 +5,12 @@ Styles for Von 91 Coding Challenge
 /* ------------  base styles  ------------ */
 body, html {
   margin: 0;
+}
+
+body {
   min-height: 100%;
+  position: relative;
+  padding-bottom: 171px; /* footer height */
 }
 /* ------------  /end base styles  ------------ */
 
@@ -13,7 +18,14 @@ body, html {
 /* ------------  typography  ------------ */
 html {
   font-size: 22px;
-  font-family: "merriweather", serif;
+  font-family: "merriweather", sans-serif;
+}
+
+h1 {
+  font-size: 70px;
+  font-family: "merriweather",serif;
+  font-style: normal;
+  font-weight: 700;
 }
 
 footer p {
@@ -24,6 +36,66 @@ footer p {
 
 
 /* ------------  header  ------------ */
+.header--background-container {
+  height: 100vh;
+  background-image: url('./images/clothing.png');
+  background-size: cover;
+  position: relative;
+}
+
+.header--background-image {
+  height: 100%;
+  width: 100%;
+
+  background-image: url('./images/clothing.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.header--background-overlay {
+  height: 100%;
+  width: 100%;
+
+  position: absolute;
+  top: 0;
+
+  background-color: #414042;
+  opacity: 0.6;
+}
+
+.header--content-wrapper {
+  height: 100%;
+  width: 100%;
+
+  position: absolute;
+  top: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header--content-wrapper h1 {
+  margin: 0;
+  text-align: center;
+  color: white;
+}
+
+.header--content-wrapper .arrow {
+  height: 22px;
+
+  position: absolute;
+  top: 50vh;
+}
+
+.header--content-wrapper .prev-arrow {
+  left: 50px;
+}
+
+.header--content-wrapper .next-arrow {
+  right: 50px;
+  transform: rotate(180deg);
+}
 /* ------------  /header  ------------ */
 
 
@@ -34,6 +106,8 @@ footer {
 
   position: absolute;
   bottom: 0;
+  left: 0;
+  right: 0;
 
   display: flex;
   align-items: center;

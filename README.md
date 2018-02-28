@@ -6,6 +6,8 @@ I generally organized the css file by the order that elements show up on the scr
 
 The only Javascript on the page is for the image carousel. All of that can be found in the client.js file.
 
+I chose to place each image in a div so that they would load at page load and not require an additional http request when they transition. since they load in css, the images shouldn't affect page load times. 
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
@@ -34,8 +36,8 @@ This repository doesn't require any dependencies to run. Open the index.html fil
 ## Next Steps
 
 - ~~build background image in html.~~
-- set header to transition after 5 seconds.
-- program buttons to transition through photos.
+- ~~set header to transition after 5 seconds.~~
+- ~~program buttons to transition through photos.~~
 
 - ~~format paragraph text~~
 - ~~position photo in article.~~

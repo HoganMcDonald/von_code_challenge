@@ -70,6 +70,77 @@
           You smart, you loyal, you a genius squeaky clean. You smart, you loyal,
           you a genius. </p>
       </article>
+
+      <!-- ========================================= -->
+
+
+      <div id="map" style="height: 400px"></div>
+      <script>
+        function initMap() {
+          const locations = [
+            {
+              coordinates: {lat: 44.882525, lng: -93.205011}, // words
+              windowContent: `<h3>Words</h3><hr><p>Terminal 1,<br>MSP International Airport</p><a target="_blank" href="https://goo.gl/maps/zNRXHe2wiCq">Directions</a>`
+            },
+            {
+              coordinates: {lat: 44.883100, lng: -93.211715}, // open book
+              windowContent: '<h3>Open Book</h3><hr><p>Terminal 1,<br>MSP International Airport</p><a target="_blank" href="https://goo.gl/maps/xg9NfbSBdzE2">Directions</a>'
+            },
+            {
+              coordinates: {lat: 44.857856, lng: -92.626211}, // fox den
+              windowContent: '<h3>Fox Den</h3><hr><p>120 S Main St,<br>River Falls, WI 54022</p><a target="_blank" href="https://goo.gl/maps/TCHmxtt7BFp">Directions</a>'
+            },
+            {
+              coordinates: {lat: 30.271780, lng: -97.752732}, // book people
+              windowContent: '<h3>Book People</h3><hr><p>Terminal ,<br>AUS International Airport</p><a target="_blank" href="https://goo.gl/maps/L86xPsiEQRB2">Directions</a>'
+            }
+          ];
+          let markers = [];
+          const map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 10,
+            center: locations[1].coordinates,
+            disableDefaultUI: true,
+            styles: [{
+              stylers: [{
+                saturation: -100
+              }]
+            }]
+          });
+          var image = new google.maps.MarkerImage(
+            './assets/icons/marker.png',
+            new google.maps.Size(26,41),    // size of the image
+            new google.maps.Point(0,0), // origin, in this case top-left corner
+            new google.maps.Point(13, 41)    // anchor, i.e. the point half-way along the bottom of the image
+          );
+
+          const infowindow = new google.maps.InfoWindow({
+            content: '<h3>testing</h3><hr><p>This is some text</p>'
+          });
+
+          for (var i = 0; i < locations.length; i++) {
+            markers.push(new google.maps.Marker({
+                position: locations[i].coordinates,
+                map: map,
+                icon: image
+              })
+            )
+            google.maps.event.addListener(markers[i], 'click', (function(marker, i){
+              return function() {
+                infowindow.setContent(locations[i].windowContent);
+                infowindow.open(map, marker);
+              }
+            })(markers[i], i))
+          }
+
+        } // initMap();
+      </script>
+      <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIRyYpRy5XMtr9l0zhqNhINJN0Un9CP1I&callback=initMap">
+      </script>
+
+
+      <!-- ========================================= -->
+
     </main>
 
     <footer>
